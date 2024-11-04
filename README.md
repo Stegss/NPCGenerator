@@ -4,6 +4,7 @@
 
 - [Features](#-features)
 - [Overview](#-overview)
+- [Attributes](#-attributes)
 - [Author](#-author)
 - [Code Example](#-code-example)
 - [Installation](#-installation)
@@ -14,17 +15,41 @@
 
 - Asks the user how many NPCs they would like to generate
 - Asks the user what they want the NPC names to be
-- Generates 15 other attributes for each NPC
+- Generates 15 other [attributes](#-attributes) for each NPC
 
 ## 📜 Overview
 
-The NPC Generator was created for a school project, and generates NPCs with attributes such as age, height, weight, strength, IQ, race, personality, occupation, the sport they play, their favorite specific float, if they are related to Gerald, if they play ROBLOX, if they are in the thick of it, if they are eamon, and how they like their cheese. This can be used for any project that may need NPCs (or just characters in general), wether it be a video game, artwork, or a book. This is capable of making hundreds of different NPCs developers can use in their projects, allowing the user to chose what names the NPCs will have.
+The NPC Generator was created for a school project, and generates NPCs with attributes such as age, height, weight, strength, IQ, race, personality, occupation, the sport they play, their favorite specific float, if they are related to Gerald, if they play ROBLOX, if they are in the thick of it, if they are eamon, and how they like their cheese. Some atributes like "robloxplayer" or "inthethickofit" are more gimicky or jokey, but you can use whatever atributes you wish for your NPCs. To see how they're gotten, check [attributes](#-attributes). This can be used for any project that may need NPCs (or just characters in general), wether it be a video game, artwork, or a book, though it was mainly designed with an open world game in mind. This is capable of making hundreds of different NPCs developers can use in their projects, allowing the user to chose what names the NPCs will have. Some atributes like "strength" are more rpg or open world based while others like "age" or "height" can be used in mostly any type of media. 
 
-### 📺 [Demonstration Video](youtube.com)
+## 🛒 Attributes
 
-## Specifications
-
-The "race", "personality", "occupation", and "sport" variables are chosen from four [lists](https://www.w3schools.com/python/python_lists.asp). Below shows the three lists in the code. 
+- The "name" variable is chosen from the "names" list that all of the user inputed names are appended.
+```python
+while len(names) < count:
+    names.append(input("Enter an NPC name: "))
+```
+- The "age" variable is a random number between 1 and 100.
+```python
+ age = random.randint(1, 100)
+```
+- The height is a combination of the "feet" and "inches" variables. Feet is a random number between 2 and 6 while inches is a random number between 0 and 11.
+```python
+feet = random.randint(2, 6)
+    inches = random.randint(0, 11)
+```
+- The "weight" variable is a random number between 80 and 300.
+```python
+weight = random.randint(80,  300)
+```
+- The "strength" variable is a random number between 1 and 500. It is made as a point value for potential enemy NPCs.
+```python
+strength = random.randint(1, 500)
+```
+- The "IQ" variable is a random number between 80 and 160.
+```python
+iq = random.randint(80, 160)
+```
+- The "race", "personality", "occupation", and "sport" variables are chosen from four [lists](https://www.w3schools.com/python/python_lists.asp). Below shows the three lists in the code. 
 
 ```python
 # Defines 3 lists full of atributes
@@ -56,9 +81,18 @@ potential_sport = ["Basketball", "Soccer", "Tennis", "Baseball", "Football", "Ho
 "Water Polo", "Billiards", "Archery", "Powerlifting", "Weightlifting", "CrossFit", "Pilates", "Yoga", "Cheerleading", "Cricket",
 "Speed Skating", "Ice Climbing", "Aerial Skiing", "Biathlon", "Skeleton", "Luge", "Bobsleigh", "Parkour", "Slacklining", "Kitesurfing",
 "Freestyle Wrestling", "Judo", "Taekwondo", "Karate", "Capoeira", "Surf Lifesaving", "Dragon Boat Racing", "Curling", "Australian Rules Football", "Sepak Takraw", "Underwater Basket Weaving"]
+
+race = random.choice(potential_race)
+    
+personality = random.choice(potential_personality)
+    
+occupation = random.choice(potential_occupation)
+    
+sport = random.choice(potential_sport)
+    
 ```
 
-The "geraldrelation", "inthethickofit", and "eamon" variables all use [.find](https://www.w3schools.com/python/ref_string_find.asp) to figure out if the name contains "Gerald" (geraldrelation), "KSI" (inthethickofit), and "Eamon" (eamon).
+- The "geraldrelation", "inthethickofit", and "eamon" variables all use [.find](https://www.w3schools.com/python/ref_string_find.asp) to figure out if the name contains "Gerald" (geraldrelation), "KSI" (inthethickofit), and "Eamon" (eamon).
 
 ```python
 geraldrelation = name.find("Gerald")
@@ -82,20 +116,43 @@ geraldrelation = name.find("Gerald")
 
 If the name does contain the certain word, the variable will be the index of where the word appears. If it is not there, the varialbe will be -1 as the world never shows up. We can then change the variable to False if it is equal to -1 and true if otherwise.
 
+- The "specificno" variable is a random float.
+```python
+specificno = random.random()
+``` 
+- The "robloxplayer" variable is a random number between 1 and 10, and if the number is 1 the variable is True. Otherwise, it's false.
+```python
+robloxplayer = random.randint(1, 10)
+    if robloxplayer == 1:
+        robloxplayer == True
+    else:
+        robloxplayer == False
+```
+- The "cheese" variable is a random number between 1 and 17. If the number is less than 6, the variable is set to 1 (later drippy). If it's less than 11 but more than 6, the variable is set to 2 (later moldy). If the number is more than 11, the variable is set to 3 (later normal).
+```python
+ cheese = random.randint(1, 17)
+    if cheese < 6:
+        cheese = 1
+    elif cheese < 11:
+        cheese = 2
+    elif cheese > 11:
+        cheese = 3
+```
+
 ## 👨‍💻 Author
 
-Me, "Stegss" who likes learning to code. I've found Python very interesting so far, and this project was pretty fun to make.
-
-[My Github](https://github.com/Stegss)
+Me, "Stegss" who likes learning to code. I've found Python very interesting so far, and this project was pretty fun to make. I enjoyed puting some silly ideas into the generator and think this could actually be used to generate tons of NPCs for whatever if integrated correctly. [Github](https://github.com/Stegss)
 
 ## 💻 Code Example
 
-Here is an example of an NPC output if the user asked for 1 NPC and inputed the name "Stegss":
+Here is an example of a program output:
 
 ```python
+How many NPCs do you wish to make? 1 # user inputed the 1                                            
+Enter an NPC name: Stegss # user inputed the "Stegss"
 Name: Stegss                                                                    
  Age: 9                                                                         
- Height: 4 Feet 5 Inches                                                        
+ Height: 4 Feet 8 Inches                                                        
  Weight: 133 LBS                                                                
  Strength: 68                                                                   
  IQ: 155                                                                        
@@ -110,16 +167,16 @@ Name: Stegss
  Stegss IS NOT Eamon                                                            
  Stegss likes their cheese moldy bruh
 ```
-## Installation 
+## ✅ Installation 
 
 1. **Fork the repo** on GitHub.
 2. **Clone your fork**:
 
    ```bash
-   git clone https://github.com/Stegss/NPCgenerator.git
+   git clone https://github.com/Stegss/NPCGenerator.git
    ```
 
-### Requirements
+### 📝 Requirements
 
 - macOS 10.15 or later
 - Windows 10 64-bit or later. You must have a 64-bit operating system to run GitHub Desktop.
