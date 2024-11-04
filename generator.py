@@ -48,7 +48,6 @@ for i in names:
     
     feet = random.randint(2, 6)
     inches = random.randint(0, 11)
-    height = (feet, "Feet,", inches, "Inches")
     
     weight = random.randint(80,  300)
     
