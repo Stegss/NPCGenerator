@@ -20,7 +20,11 @@
 
 The NPC Generator was created for a school project, and generates NPCs with random attributes such as Age, Height, Weight, Occupation, Race, IQ, etc. This can be used for any project that may need NPCs (or just characters in general), wether it be a video game, artwork, or a story. 
 
-📺 Demonstration Video: 
+### 📺 Demonstration Video: 
+
+## Specifications
+
+Explain the geraldrelation and inthethickofit things here
 
 ## 👨‍💻 Author
 
@@ -30,7 +34,7 @@ Me, "Stegss" who likes learning to code. I've found Python very interesting so f
 
 ## 💻 Code Example
 
-Here is an example of an NPC output if the user inputed the name "Stegss":
+Here is an example of an NPC output if the user asked for 1 NPC and inputed the name "Stegss":
 
 ```python
 Name: Stegss                                                                    
@@ -56,7 +60,7 @@ Name: Stegss
 2. **Clone your fork**:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/my-awesome-program.git
+   git clone https://github.com/Stegss/NPCgenerator.git
    ```
 
 ### Requirements
